@@ -3,7 +3,7 @@ from collections import abc
 from typing import Dict, Union, Iterable, Optional, Any
 
 
-from confluent_kafka import SerializingProducer, DeserializingConsumer
+from confluent_kafka import Producer, Consumer
 from confluent_kafka.serialization import StringSerializer, StringDeserializer
 
 from utils.settings import KafkaConfig
@@ -30,7 +30,7 @@ def create_producer(config=Optional[Dict[str, Any]]) -> 'confluent_kafka.Seriali
         'value.serializer': serializer,
         'client.id': socket.gethostname()
     }
-    producer = SerializingProducer(producer_config)
+    producer = Producer(producer_config)
 
     return producer    
         
@@ -58,7 +58,7 @@ def create_consumer(consumer_topic: Union[str, Iterable[str]], config=Optional[D
         # auto.commit.interval.ms : commit interval 시간
     }
     
-    consumer = DeserializingConsumer(consumer_config)
+    consumer = Consumer(consumer_config)
     consumer.subscribe(topics)
 
     return consumer
