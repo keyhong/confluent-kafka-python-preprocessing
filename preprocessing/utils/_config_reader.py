@@ -1,17 +1,20 @@
-######################################################
-#    프로그램명    : config_reader.py
-#    작성자        : GyuWon Hong
-#    작성일자      : 2022.01.27
-#    파라미터      : None
-#    설명          : config 파일을 파싱하여 가져오는 파일 (default : 해당 파일과 동일 경로에 있는 "*.ini" 를 읽는다)
-######################################################
+#!/usr/bin/env python3
+#! -*- coding: utf-8 -*-
 
-import os
-import glob
+"""
+config 파일을 파싱하여 가져오는 파일 (default : 해당 파일과 동일 경로에 있는 "*.ini" 를 읽는다)
+"""
+
+from __future__ import annotations
+
 import configparser
+import glob
+import os
 from typing import List
 
-from utils.device_logger import logger
+from preprocessing.utils.device_logger import logger
+
+__all__ = ["ConfigReader"]
 
 class ConfigReader:
 
@@ -24,7 +27,7 @@ class ConfigReader:
         elif isinstance(CFG_DIR, str):
             raise TypeError('input var CFG_DIR should be str.')
         # config 위치 경로에 대한 인풋값 설정이 잘못됬다면(폴더가 없는 경우)에도 현재 파일 실행 디렉토리로 config 파일 위치 폴더로 지정
-        elif not isdir(CFG_DIR): 
+        elif not os.isdir(CFG_DIR): 
             logger.error(f'input variable CFG_DIR "{CFG_DIR}"  is not exists. Set base CFG_DIR "{os.path.dirname(os.path.abspath(__file__))}"')
             cls.CFG_DIR = os.path.dirname(os.path.abspath(__file__)) 
 

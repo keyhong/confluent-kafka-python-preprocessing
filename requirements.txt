@@ -1,0 +1,4 @@
+pandas
+numpy
+scikit-learn
+confluent-kafka==2.1.1

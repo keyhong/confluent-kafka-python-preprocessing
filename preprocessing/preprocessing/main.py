@@ -1,19 +1,19 @@
-######################################################
-#    프로그램명    : main.py
-#    작성자        : GyuWon Hong
-#    작성일자      : 2022.01.27
-#    파라미터      : None
-#    설명          : 카프카(producer, consumer)를 생성하여 받은 데이터를 전처리하고 카프카로 보내주는 전처리 모듈
-######################################################
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+from __future__ import annotations
 
 import json
+from typing import (
+    List,
+    Dict,
+    Any,
+    Optional,
+)
 
-from typing import List, Dict, Any, Optional
-
-from kafka.kafka.kafka_session import create_producer, create_consumer
+from preprocessing.kafka.kafka_session import create_producer, create_consumer
 from preprocessing.patient_preprocessor import PatientPreprocessor
-from utils.settings import KafkaConfig, ModelConfig
-from utils.device_logger import logger
+from preprocessing.utils import KafkaConfig, ModelConfig, logger
 
 def dict_to_json(send_data: Dict[str, Any]):
     

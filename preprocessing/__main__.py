@@ -1,10 +1,11 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 import os
 import sys
-import warnings
 
 if sys.path[0] in ("", os.getcwd()):
     sys.path.pop(0)
-
 
 if __package__ == "":
     path = os.path.dirname(os.path.dirname(__file__))
@@ -12,6 +13,6 @@ if __package__ == "":
 
 if __name__ == "__main__":
 
-    from preprocess.main import main as _main
+    from preprocessing.preprocess.main import main as _main
 
     sys.exit(_main())
