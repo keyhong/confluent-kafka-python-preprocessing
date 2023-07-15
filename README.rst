@@ -11,7 +11,7 @@ Installation
 
 .. code-block:: bash
     
-  cd /home/icitydatahub/soss && pip install -e . 
+  pip install -e . 
 
 Dependencies
 ------------
