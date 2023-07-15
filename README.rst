@@ -13,12 +13,6 @@ Installation
     
   cd /home/icitydatahub/soss && pip install -e . 
 
-Execution
------------
-| 프로그램을 실행시키기 위한 일별, 월별 프로그램을 실행시킬수 있는 airflow 스케줄링 파일 ($AIRFLOW_HOME/dags)이 만들어져 있습니다.
-| 따라서 스케줄링을 실행하고 airflow-webserver 에서 실행 확인 필요
-| airflow-webserver : http://172.19.100.217:8080/home
-
 Dependencies
 ------------
 
