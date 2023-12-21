@@ -4,18 +4,16 @@
 confluent-kafka-python-preprocessing
 ======================================
 
-confluent-kafka-python 을 이용한 stateful 전처리 모듈
+confluent-kafka-python Stateful 전처리 모듈
 
 Installation
 ------------
-
 .. code-block:: bash
     
   pip install -e . 
 
 Dependencies
 ------------
-
 soss requires python :
 
 - Python (>= 3.6)
